@@ -6,4 +6,4 @@ spring:
     name: springboot-all-consumer
   dubbo:
     appname: springboot-duboo-consumer
-    registry: zookeeper://118.190.216.106:2181
+    registry: zookeeper://localhost:2181

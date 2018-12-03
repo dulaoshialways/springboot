@@ -54,7 +54,7 @@
         </commentGenerator>
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://118.190.216.106:3306/springboot?useUnicode=true&amp;useSSL=false&amp;useInformationSchema=true"
+                        connectionURL="jdbc:mysql://localhost:3306/springboot?useUnicode=true&amp;useSSL=false&amp;useInformationSchema=true"
                         userId="root"
                         password="fuckallhacker">
             <property name="useInformationSchema" value="true"/>
