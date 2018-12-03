@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: springboot-all-provider
+  dubbo:
+    appname: springboot-duboo-provider
+    registry: zookeeper://118.190.216.106:2181
+  datasource:
+      url: jdbc:mysql://118.190.216.106:3306/springboot?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+      username: root
+      password: fuckallhacker
+      driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    port: 6379
+    password: 123456
+    host: 118.190.216.106
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.du.springboot.entity

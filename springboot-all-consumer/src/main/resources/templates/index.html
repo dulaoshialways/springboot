@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="margin-left: 100px;margin-right: 100px">
+<table class="table">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>昵称</th>
+        <th>手机号</th>
+        <th>邮箱</th>
+        <th>地址</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${userList}">
+        <td th:text="${userStat.count}"></td>
+        <td th:text="${user.nick}"></td>
+        <td th:text="${user.phone}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.address}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

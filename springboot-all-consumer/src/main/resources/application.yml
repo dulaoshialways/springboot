@@ -1,0 +1,9 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: springboot-all-consumer
+  dubbo:
+    appname: springboot-duboo-consumer
+    registry: zookeeper://118.190.216.106:2181

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 引入配置文件 -->
+    <!--<properties resource="application-test.properties"/>-->
+    <!--<classPathEntry-->
+    <!--location="C:\Users\ubeii\.m2\repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar"/>-->
+    <context id="default" targetRuntime="MyBatis3">
+        <!-- 生成的Java文件的编码 -->
+        <property name="javaFileEncoding" value="UTF-8" />
+        <!-- 格式化java代码 -->
+        <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter" />
+        <!-- JavaBean 实现 序列化 接口 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <!-- genenat entity时,生成toString -->
+        <!--<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />-->
+        <!-- 自定义物理分页  可生成支持Mysql数据的limit  不支持Oracle -->
+        <!--<plugin type="org.mybatis.generator.plugins.page.PaginationPlugin" />-->
+        <!-- 自定义查询指定字段  -->
+        <!--<plugin type="org.mybatis.generator.plugins.field.FieldsPlugin" />-->
+        <!-- 开启支持内存分页   可生成 支持内存分布的方法及参数
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+        -->
+        <!-- generate entity时，生成hashcode和equals方法
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+         -->
+        <!-- 此处是将Example改名为Criteria 当然 想改成什么都行~    -->
+        <!--<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">-->
+        <!--<property name="searchString" value="Example$" />-->
+        <!--<!– 替换后  -->
+        <!--<property name="replaceString" value="Criteria" />    -->
+        <!--–>-->
+        <!--<property name="replaceString" value="Query" />-->
+        <!--</plugin>-->
+        <!-- 此处是将UserMapper.xml改名为UserDao.xml 当然 想改成什么都行~ -->
+      <!--  <plugin type="org.mybatis.generator.plugins.rename.RenameSqlMapperPlugin">
+        <property name="searchString" value="Mapper" />
+        <property name="replaceString" value="Dao" />
+        </plugin>-->
+
+         <!--此处是将UserMapper改名为UserDao 接口 当然 想改成什么都行-->
+     <!--   <plugin type="org.mybatis.generator.plugins.rename.RenameJavaMapperPlugin">
+        <property name="searchString" value="Mapper$" />
+        <property name="replaceString" value="Dao" />
+        </plugin>-->
+
+        <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <!--生成的注释包含时间戳-->
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+        <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://118.190.216.106:3306/springboot?useUnicode=true&amp;useSSL=false&amp;useInformationSchema=true"
+                        userId="root"
+                        password="fuckallhacker">
+            <property name="useInformationSchema" value="true"/>
+        </jdbcConnection>
+        <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
+            NUMERIC 类型解析为java.math.BigDecimal -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="true"/>
+        </javaTypeResolver>
+        <!-- targetProject:生成PO类的位置 -->
+        <javaModelGenerator targetPackage="com.du.springboot.entity" targetProject="src/main/java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="true"/>
+            <property name="" value="true"/>
+            <!-- 从数据库返回的值被清理前后的空格 -->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- targetProject:mapper映射文件生成的位置 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+        <!--<!– enableSubPackages:是否让schema作为包的后缀 –>-->
+        <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--ANNOTATEDMAPPER: 生成java类文件,基于注解的Mapper接口，不会有对应的XML映射文件
+            MIXEDMAPPER:XML和注解的混合形式
+            XMLMAPPER:所有的方法都在XML中，接口调用依赖XML文件 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.du.springboot.dao" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--<table tableName="user" domainObjectName="User" enableCountByExample="false"-->
+        <!--enableSelectByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"/>-->
+        <table schema="allen" tableName="t_user" domainObjectName="User"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>
+
+    </context>
+</generatorConfiguration>
