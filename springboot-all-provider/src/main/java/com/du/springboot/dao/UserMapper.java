@@ -24,6 +24,13 @@ public interface UserMapper {
      */
     int getUserByTotal();
 
+    /**
+     * 通过用户名查询用户信息
+     * @param userName
+     * @return
+     */
+    User getUserByUserName(String userName);
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(User record);

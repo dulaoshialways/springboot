@@ -23,4 +23,11 @@ public interface UserService {
      * @return
      */
     int getUserByTotal();
+
+    /**
+     * 通过用户名查询用户信息
+     * @param userName
+     * @return
+     */
+    User getUserByUserName(String userName);
 }

@@ -7,10 +7,12 @@
     <result column="phone" property="phone" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="pass_word" property="passWord" jdbcType="VARCHAR" />
   </resultMap>
 
   <sql id="Base_Column_List" >
-    id, nick, phone, address, email
+    id, nick, phone, address, email,useranme,pass_word
   </sql>
 
   <!--分页查询-->
@@ -35,6 +37,10 @@
     where id = #{id,jdbcType=INTEGER}
   </select>
 
+  <select id="getUserByUserName" resultMap="BaseResultMap" parameterType="String">
+    SELECT * FROM t_user WHERE username = #{username}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_user
     where id = #{id,jdbcType=INTEGER}
@@ -42,9 +48,9 @@
 
   <insert id="insert" parameterType="com.du.springboot.entity.User" >
     insert into t_user (id, nick, phone, 
-      address, email)
+      address, email,username,pass_word)
     values (#{id,jdbcType=INTEGER}, #{nick,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
-      #{address,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR})
+      #{address,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}),#{username,jdbcType=VARCHAR}),#{passWord,jdbcType=VARCHAR})
   </insert>
 
   <insert id="insertSelective" parameterType="com.du.springboot.entity.User" >

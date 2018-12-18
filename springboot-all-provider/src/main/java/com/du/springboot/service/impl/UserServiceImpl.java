@@ -38,4 +38,9 @@ public class UserServiceImpl implements UserService{
     public int getUserByTotal() {
         return userMapper.getUserByTotal();
     }
+
+    @Override
+    public User getUserByUserName(String userName) {
+        return userMapper.getUserByUserName(userName);
+    }
 }
