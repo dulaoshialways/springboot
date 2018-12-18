@@ -1,2 +1,2 @@
 # springboot
-springboot整合dubbo，redis
+springboot整合dubbo，redis，mybatis，thymeleaf
