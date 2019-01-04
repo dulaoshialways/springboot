@@ -30,7 +30,7 @@ public class IndexController {
             UsernamePasswordToken token = new UsernamePasswordToken(username,passWord);
             subject.login(token);
             //跳转到登录成功页面
-            return "redirect:/user";
+            return "user";
         } catch (UnknownAccountException e){
             e.printStackTrace();
         } catch (IncorrectCredentialsException e){
