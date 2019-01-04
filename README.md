@@ -1,2 +1,2 @@
 # springboot
-springboot整合dubbo，redis，mybatis，thymeleaf
+springboot整合开发中常用的工具
