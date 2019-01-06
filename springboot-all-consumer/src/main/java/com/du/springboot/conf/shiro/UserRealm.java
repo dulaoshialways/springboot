@@ -1,6 +1,5 @@
 package com.du.springboot.conf.shiro;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.du.springboot.entity.User;
 import com.du.springboot.service.UserService;
 import org.apache.shiro.authc.*;
